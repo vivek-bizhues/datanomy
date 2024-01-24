@@ -1,96 +1,12 @@
 import Layout from "@/components/Layout"
 import RelatedPostCard from "@/components/RelatedPostCard"
+import { useParams } from "next/navigation"
 
-const Singleblog = () => (
+const Singleblog = () => {
+  const params = useParams()
+  console.log(params)
+  return(
     <>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <meta name="note" content="environment=development" />
-      <noscript>
-        &lt;style&gt;.gatsby-image-wrapper noscript [data-main-image]{"{"}
-        opacity:1!important{"}"}.gatsby-image-wrapper [data-placeholder-image]
-        {"{"}opacity:0!important{"}"}&lt;/style&gt;
-      </noscript>
-      <link crossOrigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-      <link
-        crossOrigin=""
-        href="https://fonts.googleapis.com/"
-        rel="preconnect"
-      />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Spectral:400,700,900%7CKarla:400,i400,600,700&display=swap"
-        media="all"
-      />
-      <title>
-        A Guide To Buying Denim &amp; My Favourite Styles | FlexiBlog Theme
-      </title>
-      <meta
-        property="og:site_name"
-        content="FlexiBlog"
-        data-react-helmet="true"
-      />
-      <meta
-        name="twitter:card"
-        content="summary_large_image"
-        data-react-helmet="true"
-      />
-      <meta name="twitter:site" content="FlexiBlog" data-react-helmet="true" />
-    
-      <meta
-        itemProp="name"
-        content="A Guide To Buying Denim & My Favourite Styles"
-        data-react-helmet="true"
-      />
-      <meta
-        itemProp="description"
-        content="Dona curvo sub evertere quam ultimus aridus Lorem markdownum , sub tecumque, posceret revertar…"
-        data-react-helmet="true"
-      />
-      <meta
-        name="description"
-        content="Dona curvo sub evertere quam ultimus aridus Lorem markdownum , sub tecumque, posceret revertar…"
-        data-react-helmet="true"
-      />
-      <meta
-        property="og:title"
-        content="A Guide To Buying Denim & My Favourite Styles"
-        data-react-helmet="true"
-      />
-      <meta
-        property="og:description"
-        content="Dona curvo sub evertere quam ultimus aridus Lorem markdownum , sub tecumque, posceret revertar…"
-        data-react-helmet="true"
-      />
-      <meta property="og:type" content="article" data-react-helmet="true" />
-      <meta property="og:image" content="null" data-react-helmet="true" />
-      <meta
-        name="twitter:title"
-        content="A Guide To Buying Denim & My Favourite Styles"
-        data-react-helmet="true"
-      />
-      <meta
-        name="twitter:description"
-        content="Dona curvo sub evertere quam ultimus aridus Lorem markdownum , sub tecumque, posceret revertar…"
-        data-react-helmet="true"
-      />
-      <meta
-        name="twitter:creator"
-        content="https://twitter.com/twitter"
-        data-react-helmet="true"
-      />
-      <meta name="twitter:image" content="null" data-react-helmet="true" />
-      <meta
-        name="article:published_time"
-        content="April 16, 2020"
-        data-react-helmet="true"
-      />
-      <meta name="twitter:label1" value="Reading time" data-react-helmet="true" />
-      <meta name="twitter:data1" value="1 min read" data-react-helmet="true" />
       <div id="___gatsby">
         <div tabIndex={-1} id="gatsby-focus-wrapper" style={{ outline: "none" }}>
           <div className="css-130izn8">
@@ -160,24 +76,7 @@ const Singleblog = () => (
                                 alt="A Guide To Buying Denim & My Favourite Styles"
                               />
                             </picture>
-                            <noscript>
-                              &lt;picture&gt;&lt;source type="image/webp"
-                              srcSet="/static/a381cbe123484c239b97a005d5ce4a00/c9f06/image.webp
-                              800w,
-                              /static/a381cbe123484c239b97a005d5ce4a00/f47df/image.webp
-                              1600w" sizes="(min-width: 1600px) 1600px,
-                              100vw"/&gt;&lt;img width="1600" height="650"
-                              data-main-image=""
-                              style="object-fit:cover;opacity:1"
-                              sizes="(min-width: 1600px) 1600px, 100vw"
-                              decoding="async" loading="lazy"
-                              src="/static/a381cbe123484c239b97a005d5ce4a00/5e493/image.jpg"
-                              srcSet="/static/a381cbe123484c239b97a005d5ce4a00/696c0/image.jpg
-                              800w,
-                              /static/a381cbe123484c239b97a005d5ce4a00/5e493/image.jpg
-                              1600w" alt="A Guide To Buying Denim &amp;amp; My
-                              Favourite Styles"/&gt;&lt;/picture&gt;
-                            </noscript>
+                          
                           </div>
                         </a>
                         <div className="css-doq7hm">
@@ -241,21 +140,7 @@ const Singleblog = () => (
                                       alt="Florrie Jacobs"
                                     />
                                   </picture>
-                                  <noscript>
-                                    &lt;picture&gt;&lt;source type="image/webp"
-                                    srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a3542/florrie-jacobs.webp
-                                    48w,
-                                    /static/72c4b149bcc6a19070c07fb6969a3be3/0f66d/florrie-jacobs.webp
-                                    96w" sizes="48px"/&gt;&lt;img width="48"
-                                    height="48" data-main-image=""
-                                    style="object-fit:cover;opacity:1"
-                                    sizes="48px" decoding="async" loading="lazy"
-                                    src="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png"
-                                    srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png
-                                    48w,
-                                    /static/72c4b149bcc6a19070c07fb6969a3be3/416a0/florrie-jacobs.png
-                                    96w" alt="Florrie Jacobs"/&gt;&lt;/picture&gt;
-                                  </noscript>
+                               
                                 </div>
                               </div>
                             </a>
@@ -744,25 +629,7 @@ const Singleblog = () => (
                                             alt="Florrie Jacobs"
                                           />
                                         </picture>
-                                        <noscript>
-                                          &lt;picture&gt;&lt;source
-                                          type="image/webp"
-                                          srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/ae23d/florrie-jacobs.webp
-                                          150w,
-                                          /static/72c4b149bcc6a19070c07fb6969a3be3/bd37b/florrie-jacobs.webp
-                                          300w" sizes="150px"/&gt;&lt;img
-                                          width="150" height="150"
-                                          data-main-image=""
-                                          style="object-fit:cover;opacity:0"
-                                          sizes="150px" decoding="async"
-                                          loading="lazy"
-                                          src="/static/72c4b149bcc6a19070c07fb6969a3be3/46e60/florrie-jacobs.png"
-                                          srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/46e60/florrie-jacobs.png
-                                          150w,
-                                          /static/72c4b149bcc6a19070c07fb6969a3be3/d612b/florrie-jacobs.png
-                                          300w" alt="Florrie
-                                          Jacobs"/&gt;&lt;/picture&gt;
-                                        </noscript>
+                                        
                                       </div>
                                     </div>
                                   </div>
@@ -1101,5 +968,6 @@ const Singleblog = () => (
      
     </>
   )
+}
   
   export default Singleblog

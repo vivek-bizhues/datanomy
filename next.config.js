@@ -5,14 +5,14 @@ const nextConfig = {
   async redirects(){
     return [
       {
-        source: '/home',
-        destination: '/',
-        permanent: true,
+        source: "/home",
+        destination: "/",
+        permanent: false
       },
       {
         source: '/authors/:slug',
         destination: '/author/:slug',
-        permanent: true,
+        permanent: false,
       }
     ];
   }

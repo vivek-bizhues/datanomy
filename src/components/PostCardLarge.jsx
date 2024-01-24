@@ -1,13 +1,13 @@
 import React from 'react'
 
-const PostCardLarge = () => {
+const PostCardLarge = ({post}) => {
   return (
     <>
     <div className="blog_card css-1nlpeka">
     <div className="css-8th7p7">
       <article className="css-fl52rt">
         <a
-          aria-label="A Guide To Buying Denim & My Favourite Styles"
+          aria-label={post.title}
           className="css-1r9qvqp-CardMedia"
           href="/a-guide-to-buying-denim-and-my-favourite-styles/"
         >
@@ -19,7 +19,7 @@ const PostCardLarge = () => {
               style={{ maxWidth: 380, display: "block" }}
             >
               <img
-                alt=""
+                alt={post.title}
                 role="presentation"
                 aria-hidden="true"
                 src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='290'%20width='380'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
@@ -48,8 +48,7 @@ const PostCardLarge = () => {
             <picture>
               <source
                 type="image/webp"
-                srcSet="/static/a381cbe123484c239b97a005d5ce4a00/228d6/image.webp 190w,
-/static/a381cbe123484c239b97a005d5ce4a00/6b99c/image.webp 380w"
+                srcSet={post.featuredImage?.node.sourceUrl}
                 sizes="(min-width: 380px) 380px, 100vw"
               />
               <img
@@ -60,30 +59,9 @@ const PostCardLarge = () => {
                 sizes="(min-width: 380px) 380px, 100vw"
                 decoding="async"
                 loading="lazy"
-                src="/static/a381cbe123484c239b97a005d5ce4a00/144fe/image.jpg"
-                srcSet="/static/a381cbe123484c239b97a005d5ce4a00/9d7b9/image.jpg 190w,
-/static/a381cbe123484c239b97a005d5ce4a00/144fe/image.jpg 380w"
-                alt="A Guide To Buying Denim & My Favourite Styles"
+                alt={post.title}
               />
             </picture>
-            <noscript>
-              &lt;picture&gt;&lt;source type="image/webp"
-              srcSet="/static/a381cbe123484c239b97a005d5ce4a00/228d6/image.webp
-              190w,
-              /static/a381cbe123484c239b97a005d5ce4a00/6b99c/image.webp
-              380w" sizes="(min-width: 380px) 380px,
-              100vw"/&gt;&lt;img width="380" height="290"
-              data-main-image=""
-              style="object-fit:cover;opacity:1"
-              sizes="(min-width: 380px) 380px, 100vw"
-              decoding="async" loading="lazy"
-              src="/static/a381cbe123484c239b97a005d5ce4a00/144fe/image.jpg"
-              srcSet="/static/a381cbe123484c239b97a005d5ce4a00/9d7b9/image.jpg
-              190w,
-              /static/a381cbe123484c239b97a005d5ce4a00/144fe/image.jpg
-              380w" alt="A Guide To Buying Denim &amp;amp;
-              My Favourite Styles"/&gt;&lt;/picture&gt;
-            </noscript>
           </div>
         </a>
         <div className="css-juw2a1">
@@ -91,8 +69,7 @@ const PostCardLarge = () => {
             className="css-4xr6y3"
             href="/a-guide-to-buying-denim-and-my-favourite-styles/"
           >
-            A Guide To Buying Denim &amp; My Favourite
-            Styles
+           {post.title}
           </a>
           <div className="css-1qbd1f8-CardFooter">
             <a
@@ -121,8 +98,7 @@ const PostCardLarge = () => {
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a3542/florrie-jacobs.webp 48w,
-/static/72c4b149bcc6a19070c07fb6969a3be3/0f66d/florrie-jacobs.webp 96w"
+                      srcSet={post.author?.node.avatar.url}
                       sizes="48px"
                     />
                     <img
@@ -136,31 +112,9 @@ const PostCardLarge = () => {
                       sizes="48px"
                       decoding="async"
                       loading="lazy"
-                      src="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png"
-                      srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png 48w,
-/static/72c4b149bcc6a19070c07fb6969a3be3/416a0/florrie-jacobs.png 96w"
-                      alt="Florrie Jacobs"
+                      alt={post.title}
                     />
                   </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source
-                    type="image/webp"
-                    srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a3542/florrie-jacobs.webp
-                    48w,
-                    /static/72c4b149bcc6a19070c07fb6969a3be3/0f66d/florrie-jacobs.webp
-                    96w" sizes="48px"/&gt;&lt;img
-                    width="48" height="48"
-                    data-main-image=""
-                    style="object-fit:cover;opacity:1"
-                    sizes="48px" decoding="async"
-                    loading="lazy"
-                    src="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png"
-                    srcSet="/static/72c4b149bcc6a19070c07fb6969a3be3/a7a66/florrie-jacobs.png
-                    48w,
-                    /static/72c4b149bcc6a19070c07fb6969a3be3/416a0/florrie-jacobs.png
-                    96w" alt="Florrie
-                    Jacobs"/&gt;&lt;/picture&gt;
-                  </noscript>
                 </div>
               </div>
             </a>
@@ -170,27 +124,15 @@ const PostCardLarge = () => {
                   className="css-x0ewr6"
                   href="/author/florrie-jacobs/"
                 >
-                  <strong>Florrie Jacobs</strong>
+                  <strong>{post.author.node.name}</strong>
                 </a>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-1lvm5xm">
-                  April 16, 2020
+                  {post.date}
                 </div>
                 <div className="css-f0uhfh">
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    strokeWidth={0}
-                    viewBox="0 0 512 512"
-                    className="css-mbtmdz-CardFooterInfo"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5 0-200-89.5-200-200S145.5 56 256 56s200 89.5 200 200-89.5 200-200 200zm61.8-104.4l-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z" />
-                  </svg>{" "}
-                  1 min
+                 
                 </div>
               </div>
             </div>
