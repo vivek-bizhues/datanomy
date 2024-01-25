@@ -1,4 +1,5 @@
 import React from 'react'
+import { formatDate } from '@/utils/datetime'
 
 const RelatedPostCard = () => {
   return (

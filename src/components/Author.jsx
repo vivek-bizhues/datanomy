@@ -1,16 +1,18 @@
+import Link from 'next/link'
 import React from 'react'
 
-const Author = () => {
+const Author = ({author}) => {
+
   return (
     <>
     <div className="css-1gbuxmf">
     <div className="css-h0h0h8">
       <div className="css-1cbx1z6">
         <div className="css-vurnku">
-          <a
+          <Link
             aria-label="Steve Grant"
             className="css-q8lpjg"
-            href="/author/steve-grant/"
+            href={`/author/${author?.id}`}
           >
             <div className="css-652wqb">
               <div className="css-vurnku">
@@ -21,23 +23,10 @@ const Author = () => {
                   className="gatsby-image-wrapper css-5sx9x1-Avatar"
                   style={{ width: 150, height: 150 }}
                 >
-                  <img
-                    aria-hidden="true"
-                    data-placeholder-image=""
-                    style={{
-                      opacity: 0,
-                      transition: "opacity 500ms linear 0s",
-                      objectFit: "cover"
-                    }}
-                    decoding="async"
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD5klEQVR42p2TS0grZxTHz2SSWK5xYfBFC/ESBJO66MJN40JdKAhWSNJFwGLKvV0ECg0GDIjgA0VDEvCRXDGV+KrWRlSMVRdBReITwwXTitSmILi62qINRnwkk++Ub5iEVKWLfvA9Zuac35zzP98BeHmI6CIWi18BwFsAeAcA3wKABP7H4GEMw3wKAL8DAGbMXQBYBIBfAOA9APwEAPr/pKnVagaR+sKOWCymhwcASAgTRSJRemb86IcXYXK5XFRYWAhVVVXSsrKyD7m5udQ4KRKJCMuy9MwJYC7jnBCg9U95DF20Wi2IRKLvpVIpD2NZlgAAnZiVlYUqlQo1Gg1Rq9VEAD0K+5cvAgFgUjBIMgzDO1HI9PQ0Xl5eIsdxiIiELkqlMiVDBABeZcJYYf9agMWFyNBgMJCzszPc2NjA4eFhysH19XUcHR1NVlZWUtsPMpnss8yCZg5aPWQYhuqDOTk5xOVyYUVFBRqNRjSbzTgwMIA1NTXEZDKRpqYmCqwTfMXwhFoKADGGYagR0el0pLe3l8RiMbKzs4P7+/tke3sbl5eXyeTkZHJ3dxfdbvdvNDvhVjzTrhAAboTrEPf7/VQsLplMJmOxGE2ZrK2tkc7OTtLY2MjNzMxgd3f3JoU9BWZG+V0qXYVCgS0tLXh/f58ugsVioZUmBQUFcZ1OR78PjI+Pg8PhYJ8RGSYVKLyWSCRfAMAbAGgYHBzcvb29pbwkBS8sLBCHw0EikQgNq5re27q6umfFoC9BJpOlha2urqbPYDAYmgOBAN7c3CQWFxeJxWLhiouLUavV/goAWSn7+nrhXh8cHIDdbgeNRsOHLejxsc1m03u93p99Ph/3+PhIHh4eiNPpJHq9PqlUKqnRG4VCASqVis3OzoaioiIoLy8HMJlM0NDQwEqlUgr6xGq1/hgOh29XV1dxaWkJDw8P0xoKO9nb20Or1fqn2Wx+e3R09O9US0tLU4J+7nK5/rq7u+M9XS4XF41GEysrK+T8/JyHEUKQVjwUCpG5uTm02+3Y3Nz8Tqg0k8l93dPT87cQxWMkEiEjIyMkVQSPx0OGhoawq6uLdHR00PuJ0Wg0abPZEpubmyiXy78qKSmhurMQDAahtrZ29vr6mofRxefzkUAgwKfp9/txbGwMqQRer5d2CmltbeW/zc7OcrQl3W73HwDwUTo6r9fL5xmPx/moLi4uaGvh1dUVBoNBdDqdODU1hf39/djX14ft7e28BG63m2xtbSVOT09RIpHo8vLyAPLz878Jh8PUIJFIJNKi0x6mIxQKocfjQdp+8/PzODExwWt3cnKCbW1tvB/V1Wg0Th0fH8M/9Bp4PKIMU08AAAAASUVORK5CYII="
-                    alt=""
-                  />
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet="/static/05d0ac7130e48a9a86ba018fac3dbe2d/ae23d/steve-grant.webp 150w,
-/static/05d0ac7130e48a9a86ba018fac3dbe2d/bd37b/steve-grant.webp 300w"
+                      srcSet={author?.avatar.url}
                       sizes="150px"
                     />
                     <img
@@ -51,46 +40,24 @@ const Author = () => {
                       sizes="150px"
                       decoding="async"
                       loading="lazy"
-                      src="/static/05d0ac7130e48a9a86ba018fac3dbe2d/46e60/steve-grant.png"
-                      srcSet="/static/05d0ac7130e48a9a86ba018fac3dbe2d/46e60/steve-grant.png 150w,
-/static/05d0ac7130e48a9a86ba018fac3dbe2d/d612b/steve-grant.png 300w"
-                      alt="Steve Grant"
+                      alt={author?.name}
                     />
                   </picture>
-                  <noscript>
-                    &lt;picture&gt;&lt;source
-                    type="image/webp"
-                    srcSet="/static/05d0ac7130e48a9a86ba018fac3dbe2d/ae23d/steve-grant.webp
-                    150w,
-                    /static/05d0ac7130e48a9a86ba018fac3dbe2d/bd37b/steve-grant.webp
-                    300w" sizes="150px"/&gt;&lt;img
-                    width="150" height="150"
-                    data-main-image=""
-                    style="object-fit:cover;opacity:0"
-                    sizes="150px" decoding="async"
-                    loading="lazy"
-                    src="/static/05d0ac7130e48a9a86ba018fac3dbe2d/46e60/steve-grant.png"
-                    srcSet="/static/05d0ac7130e48a9a86ba018fac3dbe2d/46e60/steve-grant.png
-                    150w,
-                    /static/05d0ac7130e48a9a86ba018fac3dbe2d/d612b/steve-grant.png
-                    300w" alt="Steve
-                    Grant"/&gt;&lt;/picture&gt;
-                  </noscript>
                 </div>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="css-ml7o7s">
         <div className="css-ucm7br">
           <h2 className="css-djc0oo">
-            <a
+            <Link
               className="css-q8lpjg"
-              href="/author/steve-grant/"
+              href={`/author/${author?.id}`}
             >
-              Steve Grant
-            </a>
+              {author?.name}
+            </Link>
           </h2>
         </div>
         <div className="css-h0h0h8">
@@ -195,14 +162,18 @@ const Author = () => {
         </div>
       </div>
     </div>
-    <a className="css-lsfozy" href="/author/steve-grant/">
+    <Link
+    className="css-lsfozy" 
+    href={`/author/${author?.id}`}
+    >
       View Posts
-    </a>
+    </Link>
     <div className="css-14sch85" />
     <div className="css-k73024" />
   </div>
     </>
   )
 }
+
 
 export default Author

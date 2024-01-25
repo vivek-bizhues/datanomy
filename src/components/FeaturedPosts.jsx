@@ -1,17 +1,17 @@
+import Link from 'next/link'
 import React from 'react'
+import { formatDate } from '@/utils/datetime'
 
 const FeaturedPosts = ({post}) => {
-
-    console.log(post)
   return (
     <div>
     <div className="blog_card css-756xbo">
     <div className="css-12blpch">
       <article className="css-l5ycrh">
-        <a
+        <Link
           aria-label="Here’s What I’ve Learnt Over The Past Seven Years"
           className="css-9yc4ha-CardMedia"
-          href="/heres-what-ive-learnt-over-the-past-seven-years/"
+          href={`/${post?.slug}`}
         >
           <div
             data-gatsby-image-wrapper=""
@@ -50,7 +50,7 @@ const FeaturedPosts = ({post}) => {
             <picture>
               <source
                 type="image/webp"
-                srcSet={post.featuredImage?.node.sourceUrl}
+                srcSet={post?.featuredImage?.node.sourceUrl}
                 sizes="(min-width: 1600px) 1600px, 100vw"
               />
               <img
@@ -61,34 +61,32 @@ const FeaturedPosts = ({post}) => {
                 sizes="(min-width: 1600px) 1600px, 100vw"
                 decoding="async"
                 loading="eager"
-                alt={post.title}
+                alt={post?.title}
               />
             </picture>
           </div>
-        </a>
+        </Link>
         <div className="css-1lcwvjb">
-          <a
+          <Link
             className="css-8trgtg"
-            href="/heres-what-ive-learnt-over-the-past-seven-years/"
-          >
-            {post.title}
-          </a>
+            href={`/${post?.slug}`}          >
+            {post?.title}
+          </Link>
           <div className="css-dx2v00-CardFooter">
             <div className="css-1u093if">
               <div className="css-1urriwz">
-                <a
+                <Link
                   className="css-x0ewr6"
-                  href="/author/florrie-jacobs/"
+                  href={`/author/${post?.author.node.id}`}
                 >
-                  <strong>{post.author.node.name}</strong>
-                </a>
+                  <strong>{post?.author.node.name}</strong>
+                </Link>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-12hibeq">
-                  {post.date}
-                </div>
-                
-              </div>
+                {formatDate(post?.date)}                
+              </div>  
+             </div>
             </div>
           </div>
         </div>

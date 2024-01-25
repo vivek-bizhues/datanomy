@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
+import { formatDate } from '@/utils/datetime'
 
 const PostCardSmall = ({post}) => {
   return (
@@ -6,10 +8,10 @@ const PostCardSmall = ({post}) => {
     <div className="blog_card css-yz6r38">
     <div className="css-1jnxsjy">
       <article className="css-sp27ga">
-        <a
-          aria-label="The Three Eyeshadow Palettes I Own & How To Downsize Your Stash"
+        <Link
+          aria-label={post?.title}
           className="css-18e8mt2-CardMedia"
-          href="/the-three-eyeshadow-palettes-i-own-and-how-to-downsize-your-stash/"
+          href={`/${post?.slug}`}
         >
           <div
             data-gatsby-image-wrapper=""
@@ -48,7 +50,7 @@ const PostCardSmall = ({post}) => {
             <picture>
               <source
                 type="image/webp"
-                srcSet={post.featuredImage?.node.sourceUrl}
+                srcSet={post?.featuredImage?.node.sourceUrl}
               />
               <img
                 width={380}
@@ -58,24 +60,24 @@ const PostCardSmall = ({post}) => {
                 sizes="(min-width: 380px) 380px, 100vw"
                 decoding="async"
                 loading="lazy"
-                alt={post.title}
+                alt={post?.title}
               />
             </picture>
           
           </div>
-        </a>
+        </Link>
         <div className="css-1gtzvof">
-          <a
+          <Link
             className="css-p3gxxk"
-            href="/the-three-eyeshadow-palettes-i-own-and-how-to-downsize-your-stash/"
+            href={`/${post?.slug}`}
           >
-           {post.title}
-          </a>
+           {post?.title}
+          </Link>
           <div className="css-xua87t-CardFooter">
-            <a
+            <Link
               aria-label="Jane Smith"
               className="css-ixkfht"
-              href="/author/jane-smith/"
+              href={`/author/${post?.author?.node.id}`}
             >
               <div className="css-y1a9kj">
                 <div
@@ -92,12 +94,12 @@ const PostCardSmall = ({post}) => {
                       objectFit: "cover"
                     }}
                     decoding="async"
-                    alt={post.title}
+                    alt={post?.title}
                   />
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet={post.author?.node.avatar.url}
+                      srcSet={post?.author?.node.avatar.url}
                       sizes="48px"
                     />
                     <img
@@ -118,19 +120,19 @@ const PostCardSmall = ({post}) => {
                  
                 </div>
               </div>
-            </a>
+            </Link>
             <div className="css-1u093if">
               <div className="css-1sszmph">
-                <a
+                <Link
                   className="css-x0ewr6"
-                  href="/author/jane-smith/"
+                  href={`/author/${post?.author?.node.id}`}
                 >
-                  <strong>{post.author.node.name}</strong>
-                </a>
+                  <strong>{post?.author.node.name}</strong>
+                </Link>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-1woe70d">
-                  {post.date}
+                  {formatDate(post?.date)}
                 </div>
                 <div className="css-g2zw8h">
                  

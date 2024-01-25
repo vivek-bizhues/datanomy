@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
+import { formatDate } from '@/utils/datetime'
 
 const PostCardLarge = ({post}) => {
   return (
@@ -6,10 +8,10 @@ const PostCardLarge = ({post}) => {
     <div className="blog_card css-1nlpeka">
     <div className="css-8th7p7">
       <article className="css-fl52rt">
-        <a
-          aria-label={post.title}
+        <Link
+          aria-label={post?.title}
           className="css-1r9qvqp-CardMedia"
-          href="/a-guide-to-buying-denim-and-my-favourite-styles/"
+          href={`/${post?.slug}`}
         >
           <div
             data-gatsby-image-wrapper=""
@@ -19,7 +21,7 @@ const PostCardLarge = ({post}) => {
               style={{ maxWidth: 380, display: "block" }}
             >
               <img
-                alt={post.title}
+                alt={post?.title}
                 role="presentation"
                 aria-hidden="true"
                 src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='290'%20width='380'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E"
@@ -48,7 +50,7 @@ const PostCardLarge = ({post}) => {
             <picture>
               <source
                 type="image/webp"
-                srcSet={post.featuredImage?.node.sourceUrl}
+                srcSet={post?.featuredImage?.node.sourceUrl}
                 sizes="(min-width: 380px) 380px, 100vw"
               />
               <img
@@ -59,23 +61,23 @@ const PostCardLarge = ({post}) => {
                 sizes="(min-width: 380px) 380px, 100vw"
                 decoding="async"
                 loading="lazy"
-                alt={post.title}
+                alt={post?.title}
               />
             </picture>
           </div>
-        </a>
+        </Link>
         <div className="css-juw2a1">
-          <a
+          <Link
             className="css-4xr6y3"
-            href="/a-guide-to-buying-denim-and-my-favourite-styles/"
+            href={`/${post?.slug}`}
           >
-           {post.title}
-          </a>
+           {post?.title}
+          </Link>
           <div className="css-1qbd1f8-CardFooter">
-            <a
+            <Link
               aria-label="Florrie Jacobs"
               className="css-toyym8"
-              href="/author/florrie-jacobs/"
+              href={`/author/${post?.author?.node.id}`}
             >
               <div className="css-y1a9kj">
                 <div
@@ -98,7 +100,7 @@ const PostCardLarge = ({post}) => {
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet={post.author?.node.avatar.url}
+                      srcSet={post?.author?.node.avatar.url}
                       sizes="48px"
                     />
                     <img
@@ -112,24 +114,24 @@ const PostCardLarge = ({post}) => {
                       sizes="48px"
                       decoding="async"
                       loading="lazy"
-                      alt={post.title}
+                      alt={post?.title}
                     />
                   </picture>
                 </div>
               </div>
-            </a>
+            </Link>
             <div className="css-1u093if">
               <div className="css-1b4pycz">
-                <a
+                <Link
                   className="css-x0ewr6"
-                  href="/author/florrie-jacobs/"
+                  href={`/author/${post?.author?.node.id}`}
                 >
-                  <strong>{post.author.node.name}</strong>
-                </a>
+                  <strong>{post?.author.node.name}</strong>
+                </Link>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-1lvm5xm">
-                  {post.date}
+                {formatDate(post?.date)}
                 </div>
                 <div className="css-f0uhfh">
                  

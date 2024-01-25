@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import React from 'react'
+import { formatDate } from '@/utils/datetime'
 
 const TopPosts = ({post}) => {
   return (
@@ -6,11 +8,10 @@ const TopPosts = ({post}) => {
     <div className="blog_card css-1b4wr8">
     <div className="css-1yu7vk6">
       <article className="css-152vl2">
-        <a
+        <Link
           aria-label="What I’ll Be Wearing This Party Season & The Festive Edit"
           className="css-yx1dle-CardMedia"
-          href="/what-ill-be-wearing-this-party-season-and-the-festive-edit/"
-        >
+          href={`/${post?.slug}`}        >
           <div
             data-gatsby-image-wrapper=""
             className="gatsby-image-wrapper gatsby-image-wrapper-constrained css-159fjow-CardMediaImage"
@@ -48,7 +49,7 @@ const TopPosts = ({post}) => {
             <picture>
               <source
                 type="image/webp"
-                srcSet={post.featuredImage?.node.sourceUrl}
+                srcSet={post?.featuredImage?.node.sourceUrl}
                 sizes="(min-width: 360px) 360px, 100vw"
               />
               <img
@@ -59,23 +60,22 @@ const TopPosts = ({post}) => {
                 sizes="(min-width: 360px) 360px, 100vw"
                 decoding="async"
                 loading="lazy"
-                alt={post.title}
+                alt={post?.title}
               />
             </picture>
           </div>
-        </a>
+        </Link>
         <div className="css-e1pxdn">
-          <a
+          <Link
             className="css-17aj4p4"
-            href="/what-ill-be-wearing-this-party-season-and-the-festive-edit/"
-          >
-            {post.title}
-          </a>
+            href={`/${post?.slug}`}          >
+            {post?.title}
+          </Link>
           <div className="css-192r8pr-CardFooter">
-            <a
+            <Link
               aria-label="Steve Grant"
               className="css-1xu70dd"
-              href="/author/steve-grant/"
+              href={`/author/${post?.author?.node.id}`}
             >
               <div className="css-y1a9kj">
                 <div
@@ -92,12 +92,12 @@ const TopPosts = ({post}) => {
                       objectFit: "cover"
                     }}
                     decoding="async"
-                    alt={post.author?.node.name}
+                    alt={post?.author?.node.name}
                   />
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet={post.author?.node.avatar.url}
+                      srcSet={post?.author?.node.avatar.url}
                       sizes="48px"
                     />
                     <img
@@ -111,24 +111,24 @@ const TopPosts = ({post}) => {
                       sizes="48px"
                       decoding="async"
                       loading="lazy"
-                      alt={post.author?.node.name}
+                      alt={post?.author?.node.name}
                     />
                   </picture>
                 </div>
               </div>
-            </a>
+            </Link>
             <div className="css-1u093if">
               <div className="css-5hatyi">
-                <a
+                <Link
                   className="css-x0ewr6"
-                  href="/author/steve-grant/"
+                  href={`/author/${post?.author?.node.id}`}
                 >
-                  <strong>{post.author.node.name}</strong>
-                </a>
+                  <strong>{post?.author.node.name}</strong>
+                </Link>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-12hibeq">
-                  {post.date}
+                {formatDate(post?.date)}
                 </div>
                 <div className="css-g2zw8h">
                 

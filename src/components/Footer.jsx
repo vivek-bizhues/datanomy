@@ -71,30 +71,7 @@ const Footer = () => {
                     alt="FlexiBlog Theme"
                   />
                 </picture>
-                <noscript>
-                  &lt;picture&gt;&lt;source type="image/webp"
-                  srcSet="/static/e1abc27a01b56d93f5fcdff62c84fdd7/67108/logo.webp
-                  38w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/38397/logo.webp
-                  75w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/edeef/logo.webp
-                  150w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/d7151/logo.webp
-                  300w" sizes="(min-width: 150px) 150px,
-                  100vw"/&gt;&lt;img width="150" height="35"
-                  data-main-image="" style="object-fit:cover;opacity:1"
-                  sizes="(min-width: 150px) 150px, 100vw"
-                  decoding="async" loading="eager"
-                  src="/static/e1abc27a01b56d93f5fcdff62c84fdd7/a15e9/logo.png"
-                  srcSet="/static/e1abc27a01b56d93f5fcdff62c84fdd7/6e6b3/logo.png
-                  38w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/7e8ff/logo.png
-                  75w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/a15e9/logo.png
-                  150w,
-                  /static/e1abc27a01b56d93f5fcdff62c84fdd7/a05b5/logo.png
-                  300w" alt="FlexiBlog Theme"/&gt;&lt;/picture&gt;
-                </noscript>
+                
               </div>
             </a>
           </div>

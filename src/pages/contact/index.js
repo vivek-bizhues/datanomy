@@ -1,74 +1,9 @@
 import Layout from "@/components/Layout"
 
-const Contact = () => (
+const Contact = () => {
+
+  return(
     <>
-      <meta charSet="utf-8" />
-      <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <meta name="note" content="environment=development" />
-      <noscript>
-        &lt;style&gt;.gatsby-image-wrapper noscript [data-main-image]{"{"}
-        opacity:1!important{"}"}.gatsby-image-wrapper [data-placeholder-image]
-        {"{"}opacity:0!important{"}"}&lt;/style&gt;
-      </noscript>
-      <link crossOrigin="" href="https://fonts.gstatic.com/" rel="preconnect" />
-      <link
-        crossOrigin=""
-        href="https://fonts.googleapis.com/"
-        rel="preconnect"
-      />
-      <link rel="stylesheet" href="/commons.css" />
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Spectral:400,700,900%7CKarla:400,i400,600,700&display=swap"
-        media="all"
-      />
-      <title>Contact | FlexiBlog Theme</title>
-      <meta
-        property="og:site_name"
-        content="FlexiBlog"
-        data-react-helmet="true"
-      />
-      <meta
-        name="twitter:card"
-        content="summary_large_image"
-        data-react-helmet="true"
-      />
-      <meta name="twitter:site" content="FlexiBlog" data-react-helmet="true" />
-      <meta itemProp="name" content="Contact" data-react-helmet="true" />
-      <meta
-        itemProp="description"
-        content="My site description..."
-        data-react-helmet="true"
-      />
-      <meta
-        name="description"
-        content="My site description..."
-        data-react-helmet="true"
-      />
-      <meta property="og:title" content="Contact" data-react-helmet="true" />
-      <meta
-        property="og:description"
-        content="My site description..."
-        data-react-helmet="true"
-      />
-      <meta property="og:type" content="website" data-react-helmet="true" />
-      <meta property="og:image" content="" data-react-helmet="true" />
-      <meta name="twitter:title" content="Contact" data-react-helmet="true" />
-      <meta
-        name="twitter:description"
-        content="My site description..."
-        data-react-helmet="true"
-      />
-      <meta
-        name="twitter:creator"
-        content="https://twitter.com/gatsbyjs"
-        data-react-helmet="true"
-      />
-      <meta name="twitter:image" content="" data-react-helmet="true" />
       <div id="___gatsby">
         <div tabIndex={-1} id="gatsby-focus-wrapper" style={{ outline: "none" }}>
           <div className="css-130izn8">
@@ -298,5 +233,5 @@ const Contact = () => (
       </div>
     </>
   )
-  
+}
   export default Contact

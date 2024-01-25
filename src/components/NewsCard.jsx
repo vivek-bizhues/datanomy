@@ -9,18 +9,18 @@ const NewsCard = ({post}) => {
       <article className="css-1cl0udp">
         <div className="css-1gtzvof">
           <div className="css-1udvye0-CardBodyCategory">
-            <a
+            <Link
               className="css-geba0s"
-              href="/category/fashion-and-style/"
+              href={`category/${post?.categories?.edges[0]?.node?.name}/`}
             >
-              {post.categories?.edges[0].node.name}
-            </a>
+              {post?.categories?.edges[0].node.name}
+            </Link>
           </div>
           <Link
             className="css-p3gxxk"
-             href={`/${post.slug}`}
+             href={`/${post?.slug}`}
           >
-            {post.title}
+            {post?.title}
           </Link>
           <div className="css-q1n9x1">
             Lorem markdownum illic venturi instructa
@@ -28,10 +28,10 @@ const NewsCard = ({post}) => {
             Levat placetque…
           </div>
           <div className="css-xua87t-CardFooter">
-            <a
+            <Link
               aria-label="Steve Grant"
               className="css-ixkfht"
-              href="/author/steve-grant/"
+              href={`/author/${post?.author?.node.id}`}
             >
               <div className="css-y1a9kj">
                 <div
@@ -54,7 +54,7 @@ const NewsCard = ({post}) => {
                   <picture>
                     <source
                       type="image/webp"
-                      srcSet={post.author?.node.avatar.url}
+                      srcSet={post?.author?.node.avatar.url}
                       sizes="48px"
                     />
                     <img
@@ -68,24 +68,24 @@ const NewsCard = ({post}) => {
                       sizes="48px"
                       decoding="async"
                       loading="lazy"
-                      alt={post.author?.node.name}
+                      alt={post?.author?.node.name}
                     />
                   </picture>
                 </div>
               </div>
-            </a>
+            </Link>
             <div className="css-1u093if">
               <div className="css-1sszmph">
-                <a
+                <Link
                   className="css-x0ewr6"
-                  href="/author/steve-grant/"
+                  href={`/author/${post?.author?.node.id}`}
                 >
-                  <strong>{post.author.node.name}</strong>
-                </a>
+                  <strong>{post?.author.node.name}</strong>
+                </Link>
               </div>
               <div className="css-ah2hnh">
                 <div className="css-1woe70d">
-                  {post.date}
+                  {post?.date}
                 </div>
                 <div className="css-g2zw8h">
                 
