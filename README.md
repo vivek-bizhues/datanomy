@@ -38,3 +38,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+  <div className="css-lbkjb9">
+                <div className="css-1ez39j2" />
+                {currentPage && totalPages && (
+                  <div className="css-1x0v1y5">
+                    Page <strong>{currentPage}</strong> of <strong>{totalPages}</strong>
+                  </div>
+                )}
+                {hasNextPage && (
+                  <div className="css-1ez39j2">
+                    <Link className="css-19qoyr9" href={`/category/${slug}/page/${currentPage + 1}?after=${endCursor}`}>
+                      Next
+                    </Link>
+                  </div>
+                )}
+              </div>

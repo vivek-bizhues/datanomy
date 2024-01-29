@@ -6,7 +6,9 @@ import Link from "next/link"
 import { formatDate } from "@/utils/datetime"
 
 const Singleblog = ({post}) => {
-
+  if (!post || !post.date) {
+    return <div>Error loading post</div>;
+  }
 
   return(
     <>
@@ -81,7 +83,7 @@ const Singleblog = ({post}) => {
                           <div className="css-s5a0bm-CardBodyCategory">
                             <a
                               className="css-geba0s"
-                              href={`category/${post?.categories?.edges[0]?.node?.name}/`}
+                              href={`category/${post?.categories?.edges[0]?.node?.slug}/`}
                             >
                             {post?.categories?.edges[0].node.name}                            
                             </a>

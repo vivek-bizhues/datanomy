@@ -14,6 +14,12 @@ const nextConfig = {
         destination: '/author/:slug',
         permanent: false,
       }
+      ,
+      {
+        source: '/category/category/:slug',
+        destination: '/category/:slug',
+        permanent: false,
+      }
     ];
   }
 }

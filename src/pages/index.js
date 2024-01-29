@@ -26,9 +26,12 @@ export default function Home({featuredPosts, topPosts ,aiPosts ,bigPosts,machine
           <div className="css-1qe1pxe">
 
 
+
+
             <div className="css-15owl46">
               <div className="css-4p9r15">
 
+              
               
                 <div className="css-vurnku">
                   <div
@@ -387,6 +390,9 @@ export default function Home({featuredPosts, topPosts ,aiPosts ,bigPosts,machine
                 </div>
               </div>
             </div>
+
+
+
 
             
             <div className="css-1tk9q71">

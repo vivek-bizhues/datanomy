@@ -1,11 +1,12 @@
 import Layout from "@/components/Layout";
 import MainPosts from "@/components/MainPosts";
 import client from "@/lib/apollo_client";
-import { POSTS_BY_CATEGORY } from "@/data/posts";
+import { getPaginatedPosts } from "@/data/posts";
 import { QUERY_ALL_CATEGORIES } from "@/data/categories";
+import Pagination from "@/components/Pagination/Pagination";
 
-export const Beauty = ({posts}) => {
-
+export const Beauty = ({posts ,pagination}) => {
+  console.log(posts ,pagination)
   return(
     <>
       <div id="___gatsby">
@@ -65,32 +66,17 @@ export const Beauty = ({posts}) => {
               </div>
               <div className="css-1b24wpc" />
               <div className="css-12o0vr3">
-                <div className="css-lbkjb9">
-                  <div className="css-1ez39j2" />
-                  <div className="css-1x0v1y5">
-                    Page <strong>1</strong> of <strong>2</strong>
-                  </div>
-                  <div className="css-1ez39j2">
-                    <a
-                      className="css-19qoyr9"
-                      href="/category/fashion-and-style/page/2/"
-                    >
-                      Next
-                      <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        strokeWidth={0}
-                        viewBox="0 0 320 512"
-                        height="1em"
-                        width="1em"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
+            
+              {pagination && (
+                <Pagination
+                  addCanonical={false}
+                  currentPage={pagination?.currentPage}
+                  pagesCount={pagination?.pagesCount}
+                  basePath={pagination?.basePath}
+                />
+              )}
+              
+            </div>
             </div>
             </Layout>
           </div>
@@ -101,32 +87,23 @@ export const Beauty = ({posts}) => {
   )
 }
 
+
 export async function getStaticProps({params}) {
+  console.log(params)
   const { slug } = params;
-  try {
-    const { data: postsBycategoryData } = await client.query({
-      query: POSTS_BY_CATEGORY,
-      variables: {
-        categoryName : slug,
-        first : 6
-      },
-    });
-
-
-    return {
-      props: {
-        posts : postsBycategoryData.posts.nodes, 
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching data:', error.message);
-    return {
-      props: {
-        posts: [],
-      },
-    };
-  }
+  const { posts, pagination } = await getPaginatedPosts({
+    categoryName: slug
+  });
+  return {
+    props: {
+      posts,
+      pagination: {
+        ...pagination,
+        basePath: `/category/${slug}`},
+    },
+  };
 }
+
 
 export async function getStaticPaths() {
   try {

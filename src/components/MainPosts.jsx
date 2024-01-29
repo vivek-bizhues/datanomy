@@ -3,6 +3,7 @@ import { formatDate } from '@/utils/datetime'
 import Link from 'next/link'
 
 const MainPosts = ({post}) => {
+  // console.log(post)
   return (
     <>
     <div className="blog_card css-iackul">
@@ -72,7 +73,7 @@ const MainPosts = ({post}) => {
             <Link
               aria-current="page"
               className="css-geba0s"
-              href={`category/${post?.categories?.edges[0]?.node?.name}/`}
+              href={`category/${post?.categories?.edges[0]?.node?.slug}`}
             >
              {post?.categories?.edges[0]?.node?.name}
             </Link>
